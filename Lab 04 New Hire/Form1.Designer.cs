@@ -45,6 +45,7 @@
             this.txtDepartmentAdministration = new System.Windows.Forms.TextBox();
             this.txtGpaStudent = new System.Windows.Forms.TextBox();
             this.txtHourlyRateAdministration = new System.Windows.Forms.TextBox();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnTeacher
@@ -199,11 +200,22 @@
             this.txtHourlyRateAdministration.TabIndex = 16;
             this.txtHourlyRateAdministration.Visible = false;
             // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(15, 313);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(304, 23);
+            this.btnSubmit.TabIndex = 17;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(335, 365);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtHourlyRateAdministration);
             this.Controls.Add(this.txtGpaStudent);
             this.Controls.Add(this.txtDepartmentAdministration);
@@ -247,6 +259,7 @@
         private System.Windows.Forms.TextBox txtDepartmentAdministration;
         private System.Windows.Forms.TextBox txtGpaStudent;
         private System.Windows.Forms.TextBox txtHourlyRateAdministration;
+        private System.Windows.Forms.Button btnSubmit;
     }
 }
 

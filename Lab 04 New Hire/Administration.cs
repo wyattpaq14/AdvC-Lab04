@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab_04_New_Hire
 {
-    public class Administration : Person
+    public class Administration
     {
 
     }

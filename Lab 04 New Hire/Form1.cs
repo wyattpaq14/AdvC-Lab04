@@ -12,26 +12,59 @@ namespace Lab_04_New_Hire
 {
     public partial class Form1 : Form
     {
+
+
+        //declare selector to determin which 'hire' is going to happen (Administration, Student, or Teacher)
+        public string hireObject;
+
+
         public Form1()
         {
             InitializeComponent();
         }
 
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            Person p = new Person("", "", "", "", "", "");
+            if (hireObject == "Teacher")
+            {
+                p = new Person(hireObject, txtId.Text, txtFirstName.Text, txtLastName.Text, txtRankTeacher.Text, txtSallaryTeacher.Text);
+                MessageBox.Show(p.displayinfo());
+            }
+            else if (hireObject == "Student")
+            {
+                p = new Person(hireObject, txtId.Text, txtFirstName.Text, txtLastName.Text, txtMajorStudent.Text, txtGpaStudent.Text);
+                MessageBox.Show(p.displayinfo());
+            }
+            else if (hireObject == "Administrator")
+            {
+                p = new Person(hireObject, txtId.Text, txtFirstName.Text, txtLastName.Text, txtDepartmentAdministration.Text, txtHourlyRateAdministration.Text);
+                MessageBox.Show(p.displayinfo());
+            }
+            else
+            {
+                MessageBox.Show("System has malfunctioned!", "ERROR!");
+            }
 
+        }
 
         private void btnTeacher_Click(object sender, EventArgs e)
         {
             buildTeacherView();
+            hireObject = "Teacher";
+
         }
 
         private void btnStudent_Click(object sender, EventArgs e)
         {
             buildStudentView();
+            hireObject = "Student";
         }
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             buildAdministratorView();
+            hireObject = "Administrator";
         }
 
 
@@ -69,7 +102,7 @@ namespace Lab_04_New_Hire
 
 
 
-
+        //methods to clean up and change the form according to object selection
 
 
 
@@ -129,6 +162,6 @@ namespace Lab_04_New_Hire
             txtSallaryTeacher.Visible = false;
         }
 
-        
+
     }
 }
