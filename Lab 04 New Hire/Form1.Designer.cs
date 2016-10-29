@@ -46,6 +46,8 @@
             this.txtGpaStudent = new System.Windows.Forms.TextBox();
             this.txtHourlyRateAdministration = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnTeacher
@@ -202,19 +204,41 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(15, 313);
+            this.btnSubmit.Location = new System.Drawing.Point(13, 302);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(304, 23);
+            this.btnSubmit.Size = new System.Drawing.Size(135, 23);
             this.btnSubmit.TabIndex = 17;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(184, 302);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(135, 23);
+            this.btnClear.TabIndex = 18;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(15, 331);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(304, 23);
+            this.btnExit.TabIndex = 19;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(335, 365);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtHourlyRateAdministration);
             this.Controls.Add(this.txtGpaStudent);
@@ -234,7 +258,7 @@
             this.Controls.Add(this.btnStudent);
             this.Controls.Add(this.btnTeacher);
             this.Name = "Form1";
-            this.Text = "New Hire Application";
+            this.Text = "-";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,6 +284,8 @@
         private System.Windows.Forms.TextBox txtGpaStudent;
         private System.Windows.Forms.TextBox txtHourlyRateAdministration;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 

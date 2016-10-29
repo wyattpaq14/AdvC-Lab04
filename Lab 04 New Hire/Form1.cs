@@ -69,8 +69,16 @@ namespace Lab_04_New_Hire
 
 
 
-
-
+        //Button to clear fields
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearFields();
+        }
+        //Button to exit application
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
 
 
@@ -104,7 +112,18 @@ namespace Lab_04_New_Hire
 
         //methods to clean up and change the form according to object selection
 
-
+        public void clearFields()
+        {
+            txtDepartmentAdministration.Text = "";
+            txtFirstName.Text = "";
+            txtGpaStudent.Text = "";
+            txtHourlyRateAdministration.Text = "";
+            txtId.Text = "";
+            txtLastName.Text = "";
+            txtMajorStudent.Text = "";
+            txtRankTeacher.Text = "";
+            txtSallaryTeacher.Text = "";
+        }
 
 
         public void buildTeacherView()
@@ -162,6 +181,6 @@ namespace Lab_04_New_Hire
             txtSallaryTeacher.Visible = false;
         }
 
-
+        
     }
 }
