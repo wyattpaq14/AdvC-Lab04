@@ -15,12 +15,89 @@ namespace Lab_04_New_Hire
         private string opt2;
         private string hireObj;
 
+        //boolean to prevent returning of data if a field isn't valid
+        private bool errorOccured = false;
+
+
         //constructor
-        public Person(string hireObj, string id, string fname, string lname, string opt1, string opt2) : base (hireObj, id, fname, lname)
+        public Person(string hireObj, string id, string fname, string lname, string opt1, string opt2) : base(hireObj, id, fname, lname)
         {
-            this.Opt1 = opt1;
-            this.Opt2 = opt2;
             this.HireObj = hireObj;
+
+            if (hireObj == "Teacher")
+            {
+                if (Validation.isValidSelect(opt1))
+                {
+                    this.Opt1 = opt1;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid select", "Error");
+                    errorOccured = true;
+                }
+
+
+                if (Validation.isValidSalary(opt2))
+                {
+                    this.Opt2 = opt2;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid salary", "Error");
+                    errorOccured = true;
+                }
+
+            }
+            else if (hireObj == "Student")
+            {
+                if (Validation.isValidSelect(opt1))
+                {
+                    this.Opt1 = opt1;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid select", "Error");
+                    errorOccured = true;
+                }
+
+                if (Validation.isValidGPA(opt2))
+                {
+                    this.Opt2 = opt2;
+                }
+                else
+                {
+
+                    MessageBox.Show("Invalid GPA", "Error");
+                    errorOccured = true;
+                }
+
+
+
+            }
+            else if (hireObj == "Administrator")
+            {
+                if (Validation.isValidSelect(opt1))
+                {
+                    this.Opt1 = opt1;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid select", "Error");
+                    errorOccured = true;
+                }
+
+                if (Validation.isValidHourlyRate(opt2))
+                {
+                    this.Opt2 = opt2;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid hourly rate", "Error");
+                    errorOccured = true;
+                }
+            }
+
+
 
         }
 
@@ -66,24 +143,34 @@ namespace Lab_04_New_Hire
         //Overide method which determins what option 1 and option 2 is
         public override string displayinfo()
         {
-            if (this.HireObj == "Teacher")
+            if (!errorOccured)
             {
-                return base.displayinfo() + "\n" + "Rank: " + this.Opt1 + "\n" + "Salary: " + this.Opt2;
-            }
-            else if (this.HireObj == "Student")
-            {
-                return base.displayinfo() + "\n" + "Major: " + this.Opt1 + "\n" + "GPA: " + this.Opt2;
-            }
-            else if (this.HireObj == "Administrator")
-            {
-                return base.displayinfo() + "\n" + "Department: " + this.Opt1 + "\n" + "Hourly Rate: " + this.Opt2;
+
+
+                if (this.HireObj == "Teacher")
+                {
+                    return base.displayinfo() + "\n" + "Rank: " + this.Opt1 + "\n" + "Salary: " + this.Opt2;
+                }
+                else if (this.HireObj == "Student")
+                {
+                    return base.displayinfo() + "\n" + "Major: " + this.Opt1 + "\n" + "GPA: " + this.Opt2;
+                }
+                else if (this.HireObj == "Administrator")
+                {
+                    return base.displayinfo() + "\n" + "Department: " + this.Opt1 + "\n" + "Hourly Rate: " + this.Opt2;
+                }
+                else
+                {
+                    MessageBox.Show("Contact support", "ERROR!");
+                    return "ERROR";
+                }
+
             }
             else
             {
-                MessageBox.Show("Contact support", "ERROR!");
-                return "ERROR";
+                return "An error has occured preventing the system from displaying information! \n\nPlease go back and fix your error!";
             }
-            
+
         }
 
     }

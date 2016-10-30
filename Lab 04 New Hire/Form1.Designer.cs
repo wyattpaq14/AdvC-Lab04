@@ -40,14 +40,12 @@
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtSallaryTeacher = new System.Windows.Forms.TextBox();
-            this.txtRankTeacher = new System.Windows.Forms.TextBox();
-            this.txtMajorStudent = new System.Windows.Forms.TextBox();
-            this.txtDepartmentAdministration = new System.Windows.Forms.TextBox();
             this.txtGpaStudent = new System.Windows.Forms.TextBox();
             this.txtHourlyRateAdministration = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.cbOption1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnTeacher
@@ -162,30 +160,6 @@
             this.txtSallaryTeacher.TabIndex = 11;
             this.txtSallaryTeacher.Visible = false;
             // 
-            // txtRankTeacher
-            // 
-            this.txtRankTeacher.Location = new System.Drawing.Point(98, 217);
-            this.txtRankTeacher.Name = "txtRankTeacher";
-            this.txtRankTeacher.Size = new System.Drawing.Size(221, 20);
-            this.txtRankTeacher.TabIndex = 12;
-            this.txtRankTeacher.Visible = false;
-            // 
-            // txtMajorStudent
-            // 
-            this.txtMajorStudent.Location = new System.Drawing.Point(98, 217);
-            this.txtMajorStudent.Name = "txtMajorStudent";
-            this.txtMajorStudent.Size = new System.Drawing.Size(221, 20);
-            this.txtMajorStudent.TabIndex = 13;
-            this.txtMajorStudent.Visible = false;
-            // 
-            // txtDepartmentAdministration
-            // 
-            this.txtDepartmentAdministration.Location = new System.Drawing.Point(98, 217);
-            this.txtDepartmentAdministration.Name = "txtDepartmentAdministration";
-            this.txtDepartmentAdministration.Size = new System.Drawing.Size(221, 20);
-            this.txtDepartmentAdministration.TabIndex = 14;
-            this.txtDepartmentAdministration.Visible = false;
-            // 
             // txtGpaStudent
             // 
             this.txtGpaStudent.Location = new System.Drawing.Point(98, 256);
@@ -232,19 +206,27 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // cbOption1
+            // 
+            this.cbOption1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbOption1.FormattingEnabled = true;
+            this.cbOption1.Location = new System.Drawing.Point(98, 215);
+            this.cbOption1.Name = "cbOption1";
+            this.cbOption1.Size = new System.Drawing.Size(221, 21);
+            this.cbOption1.TabIndex = 20;
+            this.cbOption1.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(335, 365);
+            this.Controls.Add(this.cbOption1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtHourlyRateAdministration);
             this.Controls.Add(this.txtGpaStudent);
-            this.Controls.Add(this.txtDepartmentAdministration);
-            this.Controls.Add(this.txtMajorStudent);
-            this.Controls.Add(this.txtRankTeacher);
             this.Controls.Add(this.txtSallaryTeacher);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.txtFirstName);
@@ -258,7 +240,7 @@
             this.Controls.Add(this.btnStudent);
             this.Controls.Add(this.btnTeacher);
             this.Name = "Form1";
-            this.Text = "-";
+            this.Text = "New Hire";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -278,14 +260,12 @@
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtSallaryTeacher;
-        private System.Windows.Forms.TextBox txtRankTeacher;
-        private System.Windows.Forms.TextBox txtMajorStudent;
-        private System.Windows.Forms.TextBox txtDepartmentAdministration;
         private System.Windows.Forms.TextBox txtGpaStudent;
         private System.Windows.Forms.TextBox txtHourlyRateAdministration;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.ComboBox cbOption1;
     }
 }
 

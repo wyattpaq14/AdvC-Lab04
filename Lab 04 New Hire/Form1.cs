@@ -14,8 +14,20 @@ namespace Lab_04_New_Hire
     {
 
 
-        //declare selector to determin which 'hire' is going to happen (Administration, Student, or Teacher)
+        //declare selector to determine which 'hire' is going to happen (Administration, Student, or Teacher)
         public string hireObject;
+
+
+        //Define lists to store items based on which object
+        //For example, majors will store networking, software, and game development
+        public List<string> lstMajors = new List<string> { "Software Engineering", "Network Engineering", "Game Development" };
+        public List<string> lstDept = new List<string> { "Maintenance", "Security", "Clerical" };
+        public List<string> lstRank = new List<string> { "Professor", "Associate Professor", "Adjunct Faculty" };
+
+        //String to keep track of what is selected in the combo box
+        //Using combobox to make validation easier
+        public string selectedIndex;
+
 
 
         public Form1()
@@ -25,20 +37,25 @@ namespace Lab_04_New_Hire
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            Person p = new Person("", "", "", "", "", "");
+
+            //retreive shit from combobox
+            selectedIndex = cbOption1.Text;
+
+            //Define default data model
+            Person p = new Person("Student", "12345", "John", "Smith", "Game Development", "3.5");
             if (hireObject == "Teacher")
             {
-                p = new Person(hireObject, txtId.Text, txtFirstName.Text, txtLastName.Text, txtRankTeacher.Text, txtSallaryTeacher.Text);
+                p = new Person(hireObject, txtId.Text, txtFirstName.Text, txtLastName.Text, selectedIndex, txtSallaryTeacher.Text);
                 MessageBox.Show(p.displayinfo());
             }
             else if (hireObject == "Student")
             {
-                p = new Person(hireObject, txtId.Text, txtFirstName.Text, txtLastName.Text, txtMajorStudent.Text, txtGpaStudent.Text);
+                p = new Person(hireObject, txtId.Text, txtFirstName.Text, txtLastName.Text, selectedIndex, txtGpaStudent.Text);
                 MessageBox.Show(p.displayinfo());
             }
             else if (hireObject == "Administrator")
             {
-                p = new Person(hireObject, txtId.Text, txtFirstName.Text, txtLastName.Text, txtDepartmentAdministration.Text, txtHourlyRateAdministration.Text);
+                p = new Person(hireObject, txtId.Text, txtFirstName.Text, txtLastName.Text, selectedIndex, txtHourlyRateAdministration.Text);
                 MessageBox.Show(p.displayinfo());
             }
             else
@@ -114,14 +131,11 @@ namespace Lab_04_New_Hire
 
         public void clearFields()
         {
-            txtDepartmentAdministration.Text = "";
             txtFirstName.Text = "";
             txtGpaStudent.Text = "";
             txtHourlyRateAdministration.Text = "";
             txtId.Text = "";
             txtLastName.Text = "";
-            txtMajorStudent.Text = "";
-            txtRankTeacher.Text = "";
             txtSallaryTeacher.Text = "";
         }
 
@@ -130,20 +144,31 @@ namespace Lab_04_New_Hire
         {
             removeMiscFields();
             buildMainForm();
-            txtRankTeacher.Visible = true;
             txtSallaryTeacher.Visible = true;
             lblOpt1.Text = "Rank: ";
             lblOption2.Text = "Salary: ";
+
+            //Make combobox visiable
+            cbOption1.Visible = true;
+
+            //Bind combobox to list
+            cbOption1.DataSource = lstRank;
         }
 
         public void buildStudentView()
         {
             removeMiscFields();
             buildMainForm();
-            txtMajorStudent.Visible = true;
             txtGpaStudent.Visible = true;
             lblOpt1.Text = "Major: ";
             lblOption2.Text = "GPA: ";
+
+            //Make combobox visiable
+            cbOption1.Visible = true;
+
+
+            //Bind combobox to list
+            cbOption1.DataSource = lstMajors;
 
         }
 
@@ -151,10 +176,15 @@ namespace Lab_04_New_Hire
         {
             removeMiscFields();
             buildMainForm();
-            txtDepartmentAdministration.Visible = true;
             txtHourlyRateAdministration.Visible = true;
             lblOpt1.Text = "Department: ";
             lblOption2.Text = "Hourly Rate: ";
+
+            //Make combobox visiable
+            cbOption1.Visible = true;
+
+            //Bind combobox to list
+            cbOption1.DataSource = lstDept;
 
         }
 
@@ -173,14 +203,12 @@ namespace Lab_04_New_Hire
 
         public void removeMiscFields()
         {
-            txtDepartmentAdministration.Visible = false;
             txtHourlyRateAdministration.Visible = false;
-            txtMajorStudent.Visible = false;
             txtGpaStudent.Visible = false;
-            txtRankTeacher.Visible = false;
             txtSallaryTeacher.Visible = false;
+            cbOption1.Visible = false;
         }
 
-        
+
     }
 }
